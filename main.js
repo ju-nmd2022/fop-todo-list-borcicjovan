@@ -2,11 +2,13 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // elements
-  const pushButton = document.querySelector("#push");
-  const addTaskInput = document.querySelector("#addtask input");
-  const tasksList = document.querySelector("#tasks");
+  const pushButton = document.getElementById("push");
+  const addTaskInput = document
+    .getElementById("addtask")
+    .querySelector("input");
+  const tasksList = document.getElementById("tasks");
 
-  // function to save tasks to local storage, the thing i forgot in the first place...
+  // function to save tasks to local storage
   function saveTasks() {
     const tasks = tasksList.innerHTML;
     localStorage.setItem("tasks", tasks);
@@ -21,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const doneButtons = document.querySelectorAll(".done");
       doneButtons.forEach((button) => {
         button.addEventListener("click", function () {
-          button.parentNode.remove();
+          const taskName = button.parentNode.querySelector(".taskname");
+          taskName.style.textDecoration = "line-through";
           saveTasks();
         });
       });
@@ -62,7 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // done button
     const doneButton = tasksList.lastElementChild.querySelector(".done");
     doneButton.addEventListener("click", function () {
-      doneButton.parentNode.remove();
+      const taskName = doneButton.parentNode.querySelector(".taskname");
+      taskName.style.textDecoration = "line-through";
       saveTasks();
     });
 
