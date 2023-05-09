@@ -1,0 +1,62 @@
+.cat {
+  width: 200px;
+  height: 200px;
+  background-color: #fee0d2;
+  border: 4px solid #633c2e;
+  border-radius: 4px;
+  position: relative;
+}
+
+.cat::before,
+.cat::after {
+  content: "";
+  position: absolute;
+}
+
+.cat::before {
+  width: 32px;
+  height: 32px;
+  background-color: #633c2e;
+  border-radius: 50%;
+  top: 72px;
+  left: 64px;
+}
+
+.cat::after {
+  width: 16px;
+  height: 16px;
+  background-color: #633c2e;
+  border-radius: 50%;
+  top: 80px;
+  left: 120px;
+}
+
+.cat span {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #633c2e;
+  border-radius: 50%;
+  top: 80px;
+  left: 88px;
+}
+
+.cat span:before,
+.cat span:after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #fee0d2;
+  border-radius: 50%;
+}
+
+.cat span:before {
+  top: 4px;
+  left: 4px;
+}
+
+.cat span:after {
+  top: 4px;
+  right: 4px;
+}
